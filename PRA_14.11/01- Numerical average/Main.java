@@ -5,26 +5,21 @@ import java.util.Scanner;
 public class Main {
 
     /*
-    Vytvořte program pro výpočet součtu všech čísel od 1 do X.
-    X zadá uživatel.
+    Vytvořte program, kde uživatel zadá 5 čísel, uloží je do pole a následně vypočítá jejich průměr.
     */
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number");
-        int num = sc.nextInt();
-        String output = "";
-        int result = 0;
-        for (int i = 1; i <= num; i++) {
-            output = output + "" + i + " ";
-            if (i == num) {
-                output = output + "= ";
-            } else {
-                output = output + "+ ";
-            }
-            result+=i;
+        int[] arr = new int[3];
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println("Enter the number");
+            arr[i] = sc.nextInt();
         }
-        output = output + result;
-        System.out.println(output);
+        double sum = 0;
+        for (int x : arr) {
+            sum+=x;
+        }
+        double result = sum/arr.length;
+        System.out.println(result);
     }
 }
